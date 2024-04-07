@@ -1,8 +1,10 @@
+/* 모바일 퍼스트로 스타일을 잡고 나중에 확장하는 css로 함 */
 @charset 'utf-8';
 
 html {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
+  /* 1rem = 14px */
 }
 
 body {
@@ -23,10 +25,12 @@ a {
 
 .global-nav {
   height: 44px;
+  padding: 0 1rem;
 }
 
 .local-nav {
   height: 52px;
+  padding: 0 1rem;
   border-bottom: 1px solid #ddd;
 }
 
@@ -57,4 +61,47 @@ a {
 .local-nav-links a:not(.product-name) {
   margin-left: 2em;
   /* not 기능을 쓰면 ()괄호안에 해당하는 애를 빼고 나머지에 효과구현 */
+}
+
+.scroll-section {
+  padding-top: 50vh;
+  /* 뷰포트는 보이는 창에 절반을 쓰는 효과 */
+}
+
+#scroll-section-0 h1 {
+  font-size: 4rem;
+  /* rem으로 설정시 html이 14px이므로 14*4로 56px이 된다 */
+  text-align: center;
+}
+
+.main-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display속성이 flex일경우 가로 정렬은 justify-content를 사용, 세로 정렬은 align-items사용 */
+  margin: 5px 0px;
+  height: 3em;
+  font-size: 2.5rem;
+}
+
+.main-message p {
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.description {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.description strong {
+  float: left;
+  margin-right: 0.2em;
+  /*   (14*3)*0.2   */
+  font-size: 3rem;
+  /*   14*3   */
+  /* em은 현재 폰트사이즈를 1em으로 인식함/ 즉 3rem에 20%만큼만 여백을 쓰고싶다는 효과 */
+  color: rgb(29, 29, 31);
 }
